@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**Reads a strings from a text file input.txt, sort and write them into the file output.txt.
 
-*@version 1.6.
+*@version 1.8.
 *@author Vdovichenko A.A.
 */
 public class ReadAndSortFile{
