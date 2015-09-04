@@ -3,6 +3,7 @@ package ru.apache_maven.FirstJavaTask;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import junit.textui.TestRunner;
 
 import java.util.ArrayList;
 
@@ -19,11 +20,11 @@ public class ReadAndSortTest
         super( testName );
     }
     
-    public void testWriteAndSort(String[] args){
+    public void testWriteAndSort(String[] a){
     	ArrayList<String> asd, zxc;
     	
-    	asd = ReadAndSortFile.writeInArrayAndSort(args[0]);
-    	zxc = ReadAndSortFile.writeInArrayAndSort(args[1]);
+    	asd = ReadAndSortFile.writeInArrayAndSort(a[0]);
+    	zxc = ReadAndSortFile.writeInArrayAndSort(a[1]);
     	
     	assertTrue( asd.size() == zxc.size() );
     }
@@ -36,13 +37,20 @@ public class ReadAndSortTest
         return new TestSuite( ReadAndSortTest .class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
+    
     public void testApp()
     {
         assertTrue( true );
     }
     
+    public static void main(String[] args){
+    	
+    TestRunner runner = new TestRunner();
+    TestSuite suite = new TestSuite();
+    
+    suite.addTest(new ReadAndSortTest("testWriteAndSort"));
+    
+    runner.doRun(suite);
+    }
     
 }
